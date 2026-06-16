@@ -119,3 +119,20 @@ dependencies {
   "ksp"(libs.androidx.room.compiler)
   "ksp"(libs.moshi.kotlin.codegen)
 }
+
+tasks.register<Copy>("copyApkToBuildOutputs") {
+    from(project.layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
+    into(rootProject.file(".build-outputs"))
+}
+
+tasks.register<Copy>("copyApkToPublicBuildOutputs") {
+    from(project.layout.buildDirectory.file("outputs/apk/debug/app-debug.apk"))
+    into(rootProject.file("build-outputs"))
+}
+
+tasks.configureEach {
+    if (this.name == "assembleDebug") {
+        finalizedBy("copyApkToBuildOutputs", "copyApkToPublicBuildOutputs")
+    }
+}
+
