@@ -767,6 +767,12 @@ class MelyndaViewModel(application: Application) : AndroidViewModel(application)
             fileContent = "{\n  \"host\": \"127.0.0.1\",\n  \"secure_port\": 9091,\n  \"ollama_bridge\": \"active\"\n}",
             fileSize = 82
         ))
+        repository.insertFile(MockFileEntity(
+            fileName = "app-debug.apk",
+            filePath = "/sandbox/app-debug.apk",
+            fileContent = "[Binary Stream Payload: Melynda Ultra OS Autonomous Client Core executable package. Secure sandbox compiled.]",
+            fileSize = 4252100
+        ))
     }
 
     // --- Developer Tools: Clear logs, memories and files ---
