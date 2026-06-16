@@ -1,0 +1,8 @@
+{
+  "name": "Melynda Ultra OS",
+  "description": "Autonomous multi-agent AI operating system dashboard with terminal, speech pipeline, sandboxed safe execution, live memory, browser crawling, and system telemetry.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
